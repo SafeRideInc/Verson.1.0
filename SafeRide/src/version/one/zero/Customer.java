@@ -46,8 +46,9 @@ public class Customer {
 
 
 	// Method Description: A phone number is assumed to be valid if it contains 7,10, or 11 digits. Otherwise it is invalid and error is thrown.
-	private void validatePhoneNumber(final String phoneNum){ 
+	private void validatePhoneNumber(String phoneNum){ 
 
+		phoneNum = phoneNum.trim();
 		// Remove any characters other than digits from phone number so validation can take place.
 		final String number = trimPhoneNumber(phoneNum);
 
@@ -74,6 +75,7 @@ public class Customer {
 		if(name.trim().isEmpty()) return false;
 		else return true;
 	} // end validName()
+	
 	
 	// Method Description: Method removes any characters other than digits (0-9) from the given phone number string and return new string that only contains digits
 	private String trimPhoneNumber(String phoneNum){
@@ -112,6 +114,17 @@ public class Customer {
 		}
 
 	} // end formatNumber()
+	
+	
+	// Method Description: Method tests whether two customers are the same or not
+	public boolean equals(final Customer customer) {
+		
+		final String name = customer.getName().trim();
+		final String number = customer.getPhoneNumber().trim();
+		
+		if(name.equals(this.full_name.trim()) && number.equals(this.phone_number.trim())) return true;
+		else return false;
+	} // end equals()
 
 	@Override
 	public String toString() { 
