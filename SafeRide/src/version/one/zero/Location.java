@@ -31,11 +31,11 @@ public class Location {
 	public String toString(){
 		
 		String newString = "";
-		newString += this.address + "\n";
-		newString += this.city + ", " + this.state + "\n";
+		newString += this.address.trim() + "\n";
+		newString += this.city.trim() + ", " + this.state.trim() + "\n";
 		newString += this.zipcode;
 		
-		return newString;
+		return newString.trim();
 	}
 
 }

@@ -171,5 +171,6 @@ public class CustomerTest {
 		assertFalse(c1.equals(new Customer("Matt W", "9166014645", pickup, dest)));
 
 	} // end testEquals()
+	
 
 }
