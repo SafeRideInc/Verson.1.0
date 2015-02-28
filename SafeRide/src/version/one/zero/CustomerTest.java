@@ -149,64 +149,46 @@ public class CustomerTest {
 		pickup = new Location("Lory Student Center", "Fort Collins", "CO", 80521);
 		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80521);
 		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
-		c2 = new Customer("Spencer Hinkley", "1234567", pickup, dest);
-		c3 = new Customer("Hauk", "12345678912", pickup, dest);
-		
-		String actual = "Matt Whisler9166014645Fort Collins CO80521";
-		String actual2 = "Spencer Hinkley1234567Fort Collins CO80521";
-		String actual3 = "Hauk12345678912Fort Collins CO80521";
-		assertEquals(actual, c1.getCustomer());
-		assertEquals(actual2, c2.getCustomer());
-		assertEquals(actual3, c3.getCustomer());
+
+		String actual = "Name: Matt Whisler" + "\n"; 
+		actual += "Phone Number: (916) 601-4645" + "\n";
+		actual += "Pick-up Location: Lory Student Center" + "\n";
+		actual += "Fort Collins, CO" + "\n";
+		actual += "80521" + "\n";
+		actual += "Drop-off Location: 1925 West Lake Street" + "\n";
+		actual += "Fort Collins, CO" + "\n";
+		actual += "80521" + "\n";
+
+		assertTrue(actual.equals(c1.getCustomer().toString()));
 		
 	}
 
 	@Test
 	public void testGetCurrentLocation() throws Exception {
 		pickup = new Location("Lory Student Center", "Fort Collins", "CO", 80521);
-		Location pickup2 = new Location("Lory Student Center", "Lincoln", "NE", 68506);
-		Location pickup3 = new Location("Lory Student Center", "Denver", "CO", 80521);
 		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80154);
 		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
-		c2 = new Customer("Spencer Hinkley", "1234567", pickup2, dest);
-		c3 = new Customer("Hauk", "12345678912", pickup3, dest);
 		
 		String actual = "Lory Student Center" + "\n";
 		actual += "Fort Collins, CO" + "\n"; 
 		actual += "80521";
-		String actual2 = "Lory Student Center" + "\n";
-		actual2 += "Denver, CO" + "\n"; 
-		actual2 += "80521";
-		String actual3 = "Lory Student Center" + "\n";
-		actual3 += "Lincoln, NE" + "\n"; 
-		actual3 += "68506";
-		assertEquals(actual.trim(), c1.getCurrentLocation());
-		assertEquals(actual2.trim(), c2.getCurrentLocation());
-		assertEquals(actual3.trim(), c3.getCurrentLocation());
+
+		assertTrue(actual.equals(c1.getCurrentLocation().toString()));
+
 	}
 
 	@Test
 	public void testGetDestination() throws Exception {
 		pickup = new Location("Lory Student Center", "Fort Collins", "CO", 80521);
-		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80154);
-		Location dest2 = new Location("Lory Student Center", "Lincoln", "NE", 80521);
-		Location dest3 = new Location("Lory Student Center", "Denver", "CO", 80521);
+		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80521);
 		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
-		c2 = new Customer("Spencer Hinkley", "1234567", pickup, dest2);
-		c3 = new Customer("Hauk", "12345678912", pickup, dest3);
-		
-		String actual = "Lory Student Center" + "\n";
+	
+		String actual = "1925 West Lake Street" + "\n";
 		actual += "Fort Collins, CO" + "\n"; 
-		actual += "80521";
-		String actual2 = "Lory Student Center" + "\n";
-		actual2 += "Denver, CO" + "\n"; 
-		actual2 += "80521";
-		String actual3 = "Lory Student Center" + "\n";
-		actual3 += "Lincoln, NE" + "\n"; 
-		actual3 += "68506";
-		assertEquals(actual, c1.getDestination());
-		assertEquals(actual2, c2.getDestination());
-		assertEquals(actual3, c3.getDestination());
+		actual += 80521;
+
+		assertTrue(actual.equals(c1.getDestination().toString()));
+
 	}
 
 	@Test
