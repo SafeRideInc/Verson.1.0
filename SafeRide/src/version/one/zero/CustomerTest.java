@@ -148,7 +148,7 @@ public class CustomerTest {
 	@Test
 	public void testGetName() { 
 
-		assertEquals("Matt Whisler",c1.getName());
+		assertEquals("Matt Whisler", c1.getName());
 		assertEquals("Spencer Hinkley", c2.getName());
 		assertEquals("Hauk", c3.getName());
 
