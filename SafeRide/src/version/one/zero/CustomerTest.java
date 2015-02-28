@@ -126,23 +126,113 @@ public class CustomerTest {
 	} // end testCustomer()
 
 	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public void testToString() throws Exception {
+		
+		pickup = new Location("Lory Student Center", "Fort Collins", "Co", 80521);
+		dest = new Location("1925 West Lake Street","Fort Collins" , "Co", 80521);
+		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
+		c2 = new Customer("Spencer Hinkley", "1234567", pickup, dest);
+		c3 = new Customer("Hauk", "12345678912", pickup, dest);
+			
+		//Customer 1
+		String actual = "Name: " + c1.getName() + "\n";
+		actual += "Phone Number: " + c1.getPhoneNumber() + "\n";
+		actual += "Pick-up Location: " + c1.getCurrentLocation() + "\n";
+		actual += "Drop-off Location: " + c1.getDestination() + "\n";
+		
+		String expected = "Name: " + "Matt Whisler" + "\n";
+		expected += "Phone Number: " + "9166014645" + "\n";
+		expected += "Pick-up Location: " + "Lory Student Center" + "\n";
+		expected += "Fort Collins, Co"  + "\n";
+		expected += "80521" + "\n";
+		expected += "Drop-off Location: " + "1925 West Lake Street" + "\n";
+		expected += "Fort Collins, Co"  + "\n";
+		expected += "80521" + "\n";
+		
+		//Customer 2
+		String actual2 = "Name: " + c2.getName() + "\n";
+		actual2 += "Phone Number: " + c2.getPhoneNumber() + "\n";
+		actual2 += "Pick-up Location: " + c2.getCurrentLocation() + "\n";
+		actual2 += "Drop-off Location: " + c2.getDestination() + "\n";
+		
+		String expected2 = "Name: " + "Spencer Hinkley" + "\n";
+		expected2 += "Phone Number: " + "1234567" + "\n";
+		expected2 += "Pick-up Location: " + "Lory Student Center" + "\n";
+		expected2 += "Fort Collins, Co"  + "\n";
+		expected2 += "80521" + "\n";
+		expected2 += "Drop-off Location: " + "1925 West Lake Street" + "\n";
+		expected2 += "Fort Collins, Co"  + "\n";
+		expected2 += "80521" + "\n";
+		
+		//Customer 3
+		String actual3 = "Name: " + c3.getName() + "\n";
+		actual3 += "Phone Number: " + c3.getPhoneNumber() + "\n";
+		actual3 += "Pick-up Location: " + c3.getCurrentLocation() + "\n";
+		actual3 += "Drop-off Location: " + c3.getDestination() + "\n";
+		
+		String expected3 = "Name: " + "Hauk" + "\n";
+		expected3 += "Phone Number: " + "12345678912" + "\n";
+		expected3 += "Pick-up Location: " + "Lory Student Center" + "\n";
+		expected3 += "Fort Collins, Co"  + "\n";
+		expected3 += "80521" + "\n";
+		expected3 += "Drop-off Location: " + "1925 West Lake Street" + "\n";
+		expected3 += "Fort Collins, Co"  + "\n";
+		expected3 += "80521" + "\n";
+
+		assertEquals("Customer 1 is correct", actual, expected);
+		assertEquals("Customer 2 is correct", actual2, expected2);
+		assertEquals("Customer 3 is correct", actual3, expected3);
+		assertNotSame("Customer 1 is NOT correct", actual, expected);
+		assertNotSame("Customer 2 is NOT correct", actual2, expected2);
+		assertNotSame("Customer 3 is NOT correct", actual3, expected3);
+		
 	}
 
 	@Test
-	public void testGetCustomer() {
-		fail("Not yet implemented");
+	public void testGetCustomer() throws Exception {
+		pickup = new Location("Lory Student Center", "Fort Collins", "CO", 80521);
+		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80521);
+		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
+
+		String actual = "Name: Matt Whisler" + "\n"; 
+		actual += "Phone Number: (916) 601-4645" + "\n";
+		actual += "Pick-up Location: Lory Student Center" + "\n";
+		actual += "Fort Collins, CO" + "\n";
+		actual += "80521" + "\n";
+		actual += "Drop-off Location: 1925 West Lake Street" + "\n";
+		actual += "Fort Collins, CO" + "\n";
+		actual += "80521" + "\n";
+
+		assertTrue(actual.equals(c1.getCustomer().toString()));
+		
 	}
 
 	@Test
-	public void testGetCurrentLocation() {
-		fail("Not yet implemented");
+	public void testGetCurrentLocation() throws Exception {
+		pickup = new Location("Lory Student Center", "Fort Collins", "CO", 80521);
+		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80154);
+		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
+		
+		String actual = "Lory Student Center" + "\n";
+		actual += "Fort Collins, CO" + "\n"; 
+		actual += "80521";
+
+		assertTrue(actual.equals(c1.getCurrentLocation().toString()));
+
 	}
 
 	@Test
-	public void testGetDestination() {
-		fail("Not yet implemented");
+	public void testGetDestination() throws Exception {
+		pickup = new Location("Lory Student Center", "Fort Collins", "CO", 80521);
+		dest = new Location("1925 West Lake Street","Fort Collins" , "CO", 80521);
+		c1 = new Customer("Matt Whisler", "9166014645", pickup, dest );
+	
+		String actual = "1925 West Lake Street" + "\n";
+		actual += "Fort Collins, CO" + "\n"; 
+		actual += 80521;
+
+		assertTrue(actual.equals(c1.getDestination().toString()));
+
 	}
 
 	@Test
