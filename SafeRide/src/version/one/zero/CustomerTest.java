@@ -21,7 +21,7 @@ public class CustomerTest {
 	private Customer c1;
 	private Customer c2;
 	private Customer c3;
-
+	
 	@Before
 	public void setUp() throws Exception {
 		
