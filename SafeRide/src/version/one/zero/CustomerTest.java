@@ -16,6 +16,7 @@ import org.junit.rules.ExpectedException;
 
 public class CustomerTest {
 
+	
 	private Location pickup;
 	private Location dest;
 	private Customer c1;
