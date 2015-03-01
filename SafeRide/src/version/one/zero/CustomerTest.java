@@ -14,9 +14,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-// THIS BETTER SHOW UP
+
 public class CustomerTest {
 
+	
 	private Location pickup;
 	private Location dest;
 	private Customer c1;
